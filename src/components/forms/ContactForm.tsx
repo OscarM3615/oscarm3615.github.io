@@ -8,8 +8,9 @@ const ContactForm = () => {
 	const [fullname, setFullname] = useState('');
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
-	const [formValidated, setFormValidated] = useState(false);
 	const [showModal, setShowModal] = useState(false);
+	const [formValidated, setFormValidated] = useState(false);
+	const [formLoading, setFormLoading] = useState(false);
 
 	const submitForm = (event: FormEvent) => {
 		event.preventDefault();
@@ -17,6 +18,7 @@ const ContactForm = () => {
 		setFormValidated(true);
 		if (!(event.target as HTMLFormElement).checkValidity()) return;
 
+		setFormLoading(true);
 		sendEmail(fullname, email, message)
 			.then(() => {
 				setFullname('');
@@ -24,9 +26,11 @@ const ContactForm = () => {
 				setMessage('');
 
 				setFormValidated(false);
+				setFormLoading(false);
 				setShowModal(true);
 			})
 			.catch(err => {
+				setFormLoading(false);
 				console.error(err);
 			});
 	};
@@ -78,8 +82,21 @@ const ContactForm = () => {
 				</Form.Group>
 
 				<div className="d-flex justify-content-end">
-					<Button variant="primary" type="submit">
-						Send message
+					<Button
+						variant="primary"
+						className="button-loader"
+						type="submit"
+						disabled={formLoading}
+					>
+						{formLoading ? (
+							<span
+								className="spinner-border spinner-border-sm"
+								role="status"
+								aria-label="Loading..."
+							></span>
+						) : (
+							'Send message'
+						)}
 					</Button>
 				</div>
 			</Form>
