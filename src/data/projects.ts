@@ -5,8 +5,8 @@ const projects: Project[] = [
 		title: 'This portfolio',
 		description: 'My own website with resume, portfolio and blog',
 		pictureUrl: '/images/portfolio.png',
-		liveUrl: 'https://oscarm3615.web.app/',
-		tags: ['react', 'papercss', 'github']
+		liveUrl: 'https://oscarm3615.github.io/',
+		tags: ['nextjs', 'react', 'bootstrap']
 	},
 	{
 		title: 'Las Paredes Hablan',
