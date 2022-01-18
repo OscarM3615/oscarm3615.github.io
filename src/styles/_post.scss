@@ -1,0 +1,52 @@
+.post-content {
+	p {
+		line-height: 1.6;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		margin-block-start: 1em;
+	}
+
+	img {
+		max-width: 100%;
+	}
+
+	code {
+		background-color: $gray-100;
+		border-radius: 3px;
+		padding: 2px 4px;
+	}
+
+	// Code blocks must be clearly delimited.
+	pre {
+		background-color: #f1f2f3;
+		border: solid 1px $gray-300;
+		border-radius: 3px;
+		overflow-x: auto;
+		padding: $spacer;
+		white-space: pre;
+		word-break: break-all;
+		word-wrap: break-word;
+
+		code {
+			background-color: inherit;
+			padding: initial;
+		}
+	}
+
+	blockquote {
+		@extend .ps-3, .py-1, .mb-4;
+
+		border-left: solid 4px $gray-400;
+		font-style: italic;
+		color: $gray-600;
+
+		p {
+			margin-bottom: 0 !important;
+		}
+	}
+
+	table {
+		@extend .table, .table-bordered;
+	}
+}

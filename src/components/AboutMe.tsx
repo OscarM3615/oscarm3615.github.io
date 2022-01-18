@@ -1,0 +1,36 @@
+import ActivityIcon from 'components/ActivityIcon';
+
+type PropType = {
+	bio?: string;
+};
+
+const AboutMe = ({ bio }: PropType) => {
+	return (
+		<div>
+			<h3 className="mt-4">About Me</h3>
+			<p>{bio ?? 'Bio not available.'}</p>
+
+			<h4 className="mt-4">What I'm Doing</h4>
+
+			<div className="row">
+				<ActivityIcon
+					icon="bi-code-slash"
+					title="Web Development"
+					description="Modern web applications"
+				/>
+				<ActivityIcon
+					icon="bi-braces"
+					title="Open Source"
+					description="Collaborating on cool Github projects"
+				/>
+				<ActivityIcon
+					icon="bi-translate"
+					title="Learning languages"
+					description="gettings new vocabulary and phrases"
+				/>
+			</div>
+		</div>
+	);
+};
+
+export default AboutMe;
