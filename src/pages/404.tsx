@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import config from 'shared/config';
 
 const NotFoundPage = () => {
@@ -21,17 +22,16 @@ const NotFoundPage = () => {
 				</p>
 
 				<p className="text-center">
-					You can return to the home page or read <a href="/blog">some posts</a>
-					.
+					You can return to the home page or read some posts.
 				</p>
 
 				<div className="d-flex justify-content-center gap-2 mt-4">
-					<a href="#" className="btn btn-primary">
-						Home page
-					</a>
-					<a href="#" className="btn btn-light">
-						Read blog
-					</a>
+					<Link href="/" passHref>
+						<a className="btn btn-primary">Home page</a>
+					</Link>
+					<Link href="/blog" passHref>
+						<a className="btn btn-light">Read blog</a>
+					</Link>
 				</div>
 			</section>
 		</>

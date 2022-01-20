@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type Post from 'shared/models/post';
 
 type PropType = {
@@ -13,12 +14,11 @@ const PostCard = ({ post }: PropType) => {
 
 				<p className="card-text">{post.description}</p>
 
-				<a
-					href={`blog/${post.slug}`}
-					className="d-block card-link stretched-link text-end"
-				>
-					Read post <i className="bi bi-arrow-right"></i>
-				</a>
+				<Link href={`/blog/${post.slug}`} passHref>
+					<a className="d-block card-link stretched-link text-end">
+						Read post <i className="bi bi-arrow-right"></i>
+					</a>
+				</Link>
 			</div>
 
 			<footer className="card-footer d-flex gap-1">
