@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Container from 'react-bootstrap/Container';
 import NavigationBar from 'shared/components/NavigationBar';
 import Stats from 'shared/components/Stats';
@@ -11,6 +12,13 @@ import 'highlight.js/styles/github.css';
 const App = ({ Component, pageProps }: AppProps) => {
 	return (
 		<>
+			<Head>
+				<meta
+					name="description"
+					content="My personal portfolio/blog created with Next.js"
+				/>
+			</Head>
+
 			<NavigationBar />
 
 			<Container fluid>

@@ -5,12 +5,7 @@ class MyDocument extends Document {
 		return (
 			<Html>
 				<Head>
-					<meta charSet="utf-8" />
 					<meta name="author" content="Óscar Miranda" />
-					<meta
-						name="description"
-						content="My personal portfolio/blog created with Next.js"
-					/>
 					<meta
 						name="keywords"
 						content="portfolio, resume, blog, react, nextjs, web, development"
