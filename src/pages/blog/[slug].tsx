@@ -26,6 +26,8 @@ const BlogPostPage = ({ post }: PropType) => {
 	return (
 		<>
 			<Head>
+				<meta name="description" content={post.description} />
+
 				<title>
 					{post.title} - Blog | {config.title}
 				</title>
