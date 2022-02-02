@@ -1,5 +1,5 @@
 const config = {
-	title: 'Óscar Miranda',
+	title: 'Óscar Miranda, Web Developer',
 	email: 'oscarmiranda3615@gmail.com',
 	phone: '+52 1 (656) 529-3496',
 	urls: {

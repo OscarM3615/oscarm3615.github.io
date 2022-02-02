@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 class MyDocument extends Document {
 	render() {
 		return (
-			<Html>
+			<Html lang="en">
 				<Head>
 					<meta name="author" content="Óscar Miranda" />
 					<meta
@@ -16,6 +16,8 @@ class MyDocument extends Document {
 						property="og:image"
 						content="https://avatars.githubusercontent.com/u/60676993?v=4"
 					/>
+
+					<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 				</Head>
 				<body>
 					<Main />
