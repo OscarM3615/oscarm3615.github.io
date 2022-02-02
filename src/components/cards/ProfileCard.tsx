@@ -24,7 +24,7 @@ const ProfileCard = ({ user }: PropType) => {
 				<p className="mb-2">
 					<i
 						className="bi bi-geo-alt text-primary"
-						role="image"
+						role="img"
 						aria-label="Location"
 					></i>{' '}
 					{user.location}
@@ -32,7 +32,7 @@ const ProfileCard = ({ user }: PropType) => {
 				<p className="mb-2">
 					<i
 						className="bi bi-envelope text-primary"
-						role="image"
+						role="img"
 						arai-label="Email"
 					></i>{' '}
 					{config.email}
@@ -40,7 +40,7 @@ const ProfileCard = ({ user }: PropType) => {
 				<p className="mb-2">
 					<i
 						className="bi bi-phone text-primary"
-						role="image"
+						role="img"
 						aria-label="Phone"
 					></i>{' '}
 					{config.phone}
