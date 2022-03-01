@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 
 const NavigationBar = () => {
 	return (
-		<Navbar bg="primary" variant="dark" expand="lg">
+		<Navbar bg="primary" variant="dark" expand="lg" collapseOnSelect>
 			<Container fluid>
 				<Link href="/" passHref>
 					<Navbar.Brand>Óscar Miranda</Navbar.Brand>
