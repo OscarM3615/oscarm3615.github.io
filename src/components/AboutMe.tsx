@@ -23,11 +23,6 @@ const AboutMe = ({ bio }: PropType) => {
 					title="Open Source"
 					description="Collaborating on cool Github projects"
 				/>
-				<ActivityIcon
-					icon="bi-translate"
-					title="Learning languages"
-					description="gettings new vocabulary and phrases"
-				/>
 			</div>
 		</div>
 	);

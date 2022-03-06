@@ -21,7 +21,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 
 			<NavigationBar />
 
-			<Container fluid>
+			<Container>
 				<div className="row my-4">
 					<div className="col col-12 col-lg-8 mb-4 mb-lg-0">
 						<div className="card">
