@@ -4,5 +4,6 @@ export default interface GithubUser {
 	name: string;
 	location: string;
 	hireable: boolean;
+	blog: string;
 	bio?: string;
 }

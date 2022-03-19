@@ -85,8 +85,7 @@ const PrintableResumePage = ({
 									{ghUser.location}
 								</p>
 								<p className="small">
-									<i className="bi bi-globe text-danger"></i>{' '}
-									https://oscarm3615.github.io/
+									<i className="bi bi-globe text-danger"></i> {ghUser.blog}
 								</p>
 							</div>
 							<div className="col">
