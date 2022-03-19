@@ -1,43 +1,28 @@
-import Head from 'next/head';
-import Container from 'react-bootstrap/Container';
-import NavigationBar from 'shared/components/NavigationBar';
-import Stats from 'shared/components/Stats';
-import Credits from 'shared/components/Credits';
+import PageLayout from 'shared/components/PageLayout';
+import type { ReactElement, ReactNode } from 'react';
+import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 
 import 'styles/index.scss';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'highlight.js/styles/github.css';
 
-const App = ({ Component, pageProps }: AppProps) => {
-	return (
-		<>
-			<Head>
-				<meta
-					name="description"
-					content="My personal portfolio/blog created with Next.js"
-				/>
-			</Head>
+type NextPageWithLayout = NextPage & {
+	getLayout?: (page: ReactElement) => ReactNode;
+};
 
-			<NavigationBar />
+type AppPropsWithLayout = AppProps & {
+	Component: NextPageWithLayout;
+};
 
-			<Container>
-				<div className="row my-4">
-					<div className="col col-12 col-lg-8 mb-4 mb-lg-0">
-						<div className="card">
-							<div className="card-body">
-								<Component {...pageProps} />
-							</div>
-						</div>
-					</div>
-					<div className="col col-12 col-lg-4">
-						<Stats />
-						<Credits />
-					</div>
-				</div>
-			</Container>
-		</>
-	);
+const addDefaultLayout = (page: ReactElement) => {
+	return <PageLayout>{page}</PageLayout>;
+};
+
+const App = ({ Component, pageProps }: AppPropsWithLayout) => {
+	const getLayout = Component.getLayout ?? addDefaultLayout;
+
+	return getLayout(<Component {...pageProps} />);
 };
 
 export default App;
