@@ -17,7 +17,7 @@ class MyDocument extends Document {
 						content="https://avatars.githubusercontent.com/u/60676993?v=4"
 					/>
 
-					<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+					<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 				</Head>
 				<body>
 					<Main />
