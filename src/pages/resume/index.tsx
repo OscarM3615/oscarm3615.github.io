@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import education from 'data/education';
 import experience from 'data/experience';
 import skills from 'data/skills';
@@ -21,7 +22,18 @@ const ResumePage = ({ education, experience, skills }: PropType) => {
 				<title>Resume | {config.title}</title>
 			</Head>
 
-			<section>
+			<section className="position-relative">
+				<Link href="/resume/printable" passHref>
+					<a className="btn btn-primary position-absolute top-0 end-0">
+						<i
+							className="bi bi-printer-fill d-sm-none d-inline-block"
+							title="Printable version"
+							aria-label="Printable version"
+						></i>
+						<span className="d-sm-inline-block d-none">Printable version</span>
+					</a>
+				</Link>
+
 				<h3 className="text-center mb-4">Resume</h3>
 
 				<h4>

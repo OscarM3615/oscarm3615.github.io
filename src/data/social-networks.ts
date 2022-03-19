@@ -17,9 +17,9 @@ const socialNetworks: Social[] = [
 		icon: 'bi-google'
 	},
 	{
-		label: 'WhatsApp',
-		link: 'https://wa.me/5216565293496',
-		icon: 'bi-whatsapp'
+		label: 'LinkedIn',
+		link: 'https://www.linkedin.com/in/oscarm3615/',
+		icon: 'bi-linkedin'
 	}
 ];
 
