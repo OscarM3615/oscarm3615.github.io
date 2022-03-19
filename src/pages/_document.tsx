@@ -10,6 +10,7 @@ class MyDocument extends Document {
 						name="keywords"
 						content="portfolio, resume, blog, react, nextjs, web, development"
 					/>
+					<meta name="theme-color" content="#07689f" />
 
 					{/* Open Graph tags */}
 					<meta
