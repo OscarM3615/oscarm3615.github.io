@@ -147,7 +147,9 @@ PrintableResumePage.getLayout = (page: ReactElement) => {
 			<Head>
 				<title>{config.title}</title>
 			</Head>
-			<div style={{ width: '8.5in', height: '11in' }}>{page}</div>
+			<div style={{ width: '8.5in', height: '11in', backgroundColor: 'white' }}>
+				{page}
+			</div>
 		</>
 	);
 };
