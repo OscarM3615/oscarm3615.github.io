@@ -2,11 +2,11 @@ import SocialNetworks from 'components/SocialNetworks';
 import config from 'shared/config';
 import type GithubUser from 'shared/models/github-user';
 
-type PropType = {
+type ProfileCardProps = {
 	user: GithubUser;
 };
 
-const ProfileCard = ({ user }: PropType) => {
+const ProfileCard = ({ user }: ProfileCardProps) => {
 	return (
 		<div className="card">
 			<img className="card-img-top" src={user.avatar_url} alt={user.name} />

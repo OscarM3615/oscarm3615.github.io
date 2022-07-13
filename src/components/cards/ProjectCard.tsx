@@ -1,10 +1,10 @@
 import type Project from 'shared/models/project';
 
-type PropType = {
+type ProjectCardProps = {
 	project: Project;
 };
 
-const ProjectCard = ({ project }: PropType) => {
+const ProjectCard = ({ project }: ProjectCardProps) => {
 	return (
 		<div className="card h-100">
 			<img

@@ -1,12 +1,12 @@
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
-type PropType = {
+type MailSentModalProps = {
 	show: boolean;
 	handleClose: () => void;
 };
 
-const MailSentModal = ({ show, handleClose }: PropType) => {
+const MailSentModal = ({ show, handleClose }: MailSentModalProps) => {
 	return (
 		<Modal show={show} onHide={handleClose} centered>
 			<Modal.Header closeButton>

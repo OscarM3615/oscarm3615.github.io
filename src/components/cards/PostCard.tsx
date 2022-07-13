@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import type Post from 'shared/models/post';
 
-type PropType = {
+type PostCardProps = {
 	post: Post;
 };
 
-const PostCard = ({ post }: PropType) => {
+const PostCard = ({ post }: PostCardProps) => {
 	return (
 		<div className="card">
 			<div className="card-body">

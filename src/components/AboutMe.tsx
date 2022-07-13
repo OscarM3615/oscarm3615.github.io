@@ -1,10 +1,10 @@
 import ActivityIcon from 'components/ActivityIcon';
 
-type PropType = {
+type AboutMeProps = {
 	bio?: string;
 };
 
-const AboutMe = ({ bio }: PropType) => {
+const AboutMe = ({ bio }: AboutMeProps) => {
 	return (
 		<div>
 			<h3 className="mt-4">About Me</h3>
