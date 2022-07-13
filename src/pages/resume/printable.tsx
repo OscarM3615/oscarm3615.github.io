@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import PrintInfo from 'components/PrintInfo';
 import education from 'data/education';
 import experience from 'data/experience';
 import skills from 'data/skills';
@@ -149,6 +150,7 @@ PrintableResumePage.getLayout = (page: ReactElement) => {
 			</Head>
 			<div style={{ width: '8.5in', height: '11in', backgroundColor: 'white' }}>
 				{page}
+				<PrintInfo />
 			</div>
 		</>
 	);
