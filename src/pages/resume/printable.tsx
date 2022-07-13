@@ -1,31 +1,21 @@
 import Head from 'next/head';
-import PrintInfo from 'components/PrintInfo';
-import education from 'data/education';
-import experience from 'data/experience';
-import skills from 'data/skills';
-import softSkills from 'data/soft-skills';
+import Heading from 'components/resume/Heading';
+import ExperienceSection from 'components/resume/ExperienceSection';
+import EducationSection from 'components/resume/EducationSection';
+import SoftSkills from 'components/resume/SoftSkills';
+import HardSkills from 'components/resume/HardSkills';
+import PrintInfo from 'components/resume/PrintInfo';
 import { getGithubUser } from 'utils/github';
 import config from 'shared/config';
 import type { ReactElement } from 'react';
 import type { GetStaticProps } from 'next';
-import type Education from 'shared/models/education';
-import type Experience from 'shared/models/experience';
-import type Skill from 'shared/models/skill';
 import type GithubUser from 'shared/models/github-user';
 
 type PropType = {
 	ghUser: GithubUser;
-	education: Education[];
-	experience: Experience[];
-	skills: Skill[];
 };
 
-const PrintableResumePage = ({
-	ghUser,
-	education,
-	experience,
-	skills
-}: PropType) => {
+const PrintableResumePage = ({ ghUser }: PropType) => {
 	return (
 		<div className="row gx-0 h-100">
 			<aside className="col col-4 bg-primary text-light">
@@ -44,98 +34,22 @@ const PrintableResumePage = ({
 						designing databases.
 					</p>
 
-					<section className="pb-4">
-						<h4>
-							<i className="bi bi-diamond-fill"></i> Soft Skills
-						</h4>
+					<SoftSkills />
 
-						{softSkills.map(item => (
-							<span key={item} className="badge bg-secondary fs-6 m-1">
-								{item}
-							</span>
-						))}
-					</section>
-
-					<section className="pb-4">
-						<h4>
-							<i className="bi bi-diamond-fill"></i> Hard Skills
-						</h4>
-
-						{skills.map(item => (
-							<span key={item.label} className="badge bg-secondary fs-6 m-1">
-								{item.label}
-							</span>
-						))}
-					</section>
+					<HardSkills />
 				</div>
 			</aside>
 			<main className="col col-8">
 				<div className="container p-4 mt-2">
-					<section className="pb-4">
-						<p className="fs-1 text-primary mb-0">{ghUser.name}</p>
-						<p className="fs-5 text-danger">Web Developer</p>
+					<Heading
+						name="Óscar Miranda"
+						position="Web Developer"
+						ghUser={ghUser}
+					/>
 
-						<div className="row">
-							<div className="col">
-								<p className="small">
-									<i className="bi bi-envelope-fill text-danger"></i>{' '}
-									{config.email}
-								</p>
-								<p className="small">
-									<i className="bi bi-geo-alt-fill text-danger"></i>{' '}
-									{ghUser.location}
-								</p>
-								<p className="small">
-									<i className="bi bi-globe text-danger"></i> {ghUser.blog}
-								</p>
-							</div>
-							<div className="col">
-								<p className="small">
-									<i className="bi bi-phone-fill text-danger"></i>{' '}
-									{config.phone}
-								</p>
-								<p className="small">
-									<i className="bi bi-linkedin text-danger"></i>{' '}
-									{config.linkedin}
-								</p>
-							</div>
-						</div>
-					</section>
+					<ExperienceSection />
 
-					<section className="pb-4">
-						<h4 className="text-primary">
-							<i className="bi bi-diamond-fill"></i> Work Experience
-						</h4>
-
-						{experience.map(item => (
-							<div key={item.institution} className="mb-2">
-								<p className="fs-5 mb-0">
-									{item.position}{' '}
-									<em className="text-muted">- {item.institution}</em>
-								</p>
-								<small className="text-danger fst-italic">
-									{item.startDate} — {item.endDate}
-								</small>
-								<p>{item.description}</p>
-							</div>
-						))}
-					</section>
-
-					<section>
-						<h4 className="text-primary">
-							<i className="bi bi-diamond-fill"></i> Education
-						</h4>
-
-						{education.map(item => (
-							<div key={item.institution} className="mb-2">
-								<p className="fs-5 mb-0">{item.institution}</p>
-								<small className="text-danger fst-italic">
-									{item.startDate} — {item.endDate}
-								</small>
-								<p>{item.description}</p>
-							</div>
-						))}
-					</section>
+					<EducationSection />
 				</div>
 			</main>
 		</div>
@@ -160,12 +74,7 @@ export const getStaticProps: GetStaticProps<PropType> = async () => {
 	const ghUser = await getGithubUser('OscarM3615');
 
 	return {
-		props: {
-			ghUser,
-			education,
-			experience,
-			skills
-		}
+		props: { ghUser }
 	};
 };
 
